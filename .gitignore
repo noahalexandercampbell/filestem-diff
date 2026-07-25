@@ -7,3 +7,21 @@
 __pycache__
 dist
 build
+
+# Python / packaging
+.coverage
+htmlcov
+*.cover
+*.py,cover
+.hypothesis
+.tox
+.mypy_cache
+.pytest_cache
+*.log
+
+# IDE / OS metadata
+.DS_Store
+.vscode
+.idea
+.vercel
+.cache
