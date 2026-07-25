@@ -28,10 +28,8 @@ pip install filestemdiff
 For development:
 
 ```bash
-git clone https://github.com/your-org/filestemdiff
-cd filestemdiff
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
+pip install -e .
 ```
 
 ## Usage
@@ -62,8 +60,12 @@ print(d.to_word_diff("Hello world", "Hello there"))
 ```python
 from filestemdiff.formatter import contextual_lines
 
-text = "# secrets\nAPI_KEY=abc\n# logs\nAPI_KEY=abc\n"
-print(contextual_lines(text, "API_KEY", context=2))
+text = "# config
+DB_HOST=localhost
+# logs
+DB_HOST=127.0.0.1
+"
+print(contextual_lines(text, "DB_HOST", context=2))
 ```
 
 ## Project structure
