@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import itertools
+
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Iterator, Optional, Sequence, Tuple
 
 
 class UnifiedParser:
@@ -48,8 +49,6 @@ class UnifiedParser:
                 new_range = item[1:].split(",")
         if not old_range or not new_range:
             raise ValueError(f"Unparseable hunk header: {header}")
-        old_count = int(old_range[1]) if len(old_range) > 1 else 1
-        new_count = int(new_range[1]) if len(new_range) > 1 else 1
         hunk = {
             "header": header,
             "old_start": int(old_range[0]),
@@ -68,7 +67,7 @@ class UnifiedParser:
             return "remove"
         return "context"
 
-    def _compute_remainder(self, hunk: dict) -> Optional[tuple[int, int]]:
+    def _compute_remainder(self, hunk: dict) -> tuple[int, int] | None:
         trailing_context = sum(1 for _, op in hunk["lines"] if op == "context")
         end = hunk["old_start"] + hunk["old_count"] + trailing_context
         return (end, 0) if trailing_context else None
@@ -88,7 +87,9 @@ class MultiFileParser:
                 p = UnifiedParser(path)
                 self.event_streams.append(p.events)
             except Exception as exc:
-                self.event_streams.append([{"type": "error", "path": str(path), "message": str(exc)}])
+                self.event_streams.append(
+                    [{"type": "error", "path": str(path), "message": str(exc)}]
+                )
 
     @property
     def total_events(self) -> int:
@@ -96,4 +97,7 @@ class MultiFileParser:
 
     @property
     def total_hunks(self) -> int:
-        return sum(len([e for e in stream if e.get("type") == "hunk"]) for stream in self.event_streams)
+        return sum(
+            len([e for e in stream if e.get("type") == "hunk"])
+            for stream in self.event_streams
+        )

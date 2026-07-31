@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-import textwrap
-from typing import Optional
-
-from filestemdiff.parser import UnifiedParser, MultiFileParser  # noqa: F401
+from filestemdiff.parser import MultiFileParser, UnifiedParser  # noqa: F401
 
 
 class FileDiffer:

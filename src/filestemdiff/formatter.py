@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from difflib import Differ, unified_diff
+from difflib import unified_diff
 from pathlib import Path
-from typing import Optional
 
 
 def build_unified_diff(old: Path, new: Path, fromfile: str, tofile: str, context: int = 3) -> str:

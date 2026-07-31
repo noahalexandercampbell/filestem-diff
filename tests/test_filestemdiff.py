@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import secrets
 import textwrap
 
 import pytest

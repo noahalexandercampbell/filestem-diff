@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Structured diff + word-level patch engine for file patches and inline text."
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "WeeklyProjects" }]
+authors = [{ name = "Dr. Noah Alexander Campbell" }]
 requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -20,6 +20,9 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/noahalexandercampbell/filestem-diff"
 
 [project.optional-dependencies]
 dev = [

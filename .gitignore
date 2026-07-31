@@ -8,9 +8,6 @@ __pycache__
 dist
 build
 .env
-node_modules
-
-# Python / packaging
 .coverage
 htmlcov
 *.cover
@@ -18,7 +15,6 @@ htmlcov
 .hypothesis
 .tox
 .mypy_cache
-.pytest_cache
 *.log
 
 # IDE / OS metadata
