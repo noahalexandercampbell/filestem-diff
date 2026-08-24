@@ -23,6 +23,7 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/noahalexandercampbell/filestem-diff"
+Repository = "https://github.com/noahalexandercampbell/filestem-diff"
 
 [project.optional-dependencies]
 dev = [

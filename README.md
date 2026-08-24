@@ -89,7 +89,3 @@ filestemdiff/
 ## Repo
 
 https://github.com/noahalexandercampbell/filestem-diff
-
-## Tags / keywords
-
-`diff`, `patch`, `unified-diff`, `word-diff`, `cli`, `developer-tools`, `stdlib`

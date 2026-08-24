@@ -11,7 +11,8 @@ build
 .coverage
 htmlcov
 *.cover
-*.py,cover
+*.cover
+*.pyc
 .hypothesis
 .tox
 .mypy_cache
