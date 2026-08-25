@@ -86,6 +86,19 @@ filestemdiff/
   README.md
 ```
 
+## Contributing
+
+Issues and pull requests are welcome. Please run tests and lint before submitting changes:
+
+```bash
+python -m pytest tests -q
+ruff check src tests
+```
+
+## License
+
+MIT. See `LICENSE` for details.
+
 ## Repo
 
 https://github.com/noahalexandercampbell/filestem-diff

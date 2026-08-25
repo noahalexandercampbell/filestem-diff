@@ -8,15 +8,19 @@ __pycache__
 dist
 build
 .env
+.env.local
 .coverage
 htmlcov
-*.cover
+coverage
 *.cover
 *.pyc
 .hypothesis
 .tox
 .mypy_cache
 *.log
+.python-version
+tmp/
+out/
 
 # IDE / OS metadata
 .DS_Store
