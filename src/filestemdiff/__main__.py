@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import sys
 
-from filestemdiff import FileDiffer
-
 
 def main(argv: list[str] | None = None) -> int:
     argv = argv or sys.argv[1:]
