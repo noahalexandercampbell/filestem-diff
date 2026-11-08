@@ -70,20 +70,30 @@ print(contextual_lines(text, "DB_HOST", context=2))
 
 ## Project structure
 
-```
-filestemdiff/
-  src/filestemdiff/
-    __init__.py       # public exports
-    differ.py         # FileDiffer and word diff helper
-    formatter.py      # unified diff builders and human summary
-    parser.py         # UnifiedParser / MultiFileParser event streams
-  tests/
-    test_filestemdiff.py
-  docs/
-    references/
-      run-report-format.md
-  pyproject.toml
+```text
+.github/
+  workflows/
+    tests.yml
+.gitignore
+LICENSE
+README.md
+docs/
   README.md
+  references/
+    diffing-benchmarks.md
+    parser-contracts.md
+    run-report-format.md
+pyproject.toml
+src/
+  filesstemdiff/
+    __init__.py
+    __main__.py
+    differ.py
+    formatter.py
+    parser.py
+    py.typed
+tests/
+  test_filestemdiff.py
 ```
 
 ## Contributing
